@@ -8,17 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    @IBOutlet weak var departmenttableView: UITableView!
+ 
+    
+    @IBOutlet weak var departmentCollection: UICollectionView!
+    
+    @IBOutlet weak var categoryCollection: UICollectionView!
+    
+    
+    var departments: [String]!
+    
+    let department = ["Fresh Produce", "Fruits", "Favourites", "Bakery"]
+    
+    var categories:[String]!
+    var category = ["Cakes","Vegetables"," Kale","Beets","Soups", "Cakes","Vegetables"," Kale","Beets","Soups"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.departmenttableView.delegate = self
-        self.departmenttableView.dataSource = self
+        departmentCollection.delegate = self
+        departmentCollection.dataSource = self
         
+        departments = department
         
+        categoryCollection.delegate = self
+        categoryCollection.dataSource = self
+        
+        categories = category
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,22 +47,53 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    
+    {
+        if (collectionView == self.departmentCollection)
+        {
+        return department.count
+        }
+        
+        return category.count
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //    var cell = UITableViewCell()
-        //
-        //    cell.textLabel.text = "This is row \(indexPath.row)"
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("departmentCell") as! departmentCell
-        
-        // Configure YourCustomCell using the outlets that you've defined.
-        cell.departmentLabel.text = "Fresh Produce"
+        if (collectionView == self.departmentCollection)
+        {
+        let cell = departmentCollection.dequeueReusableCellWithReuseIdentifier("departmentViewCell", forIndexPath: indexPath) as! departmentViewCell
+       
+        cell.departmentLabel?.text = department[indexPath.row]
         
         return cell
+        }
+        else
+        {
+        let cell = categoryCollection.dequeueReusableCellWithReuseIdentifier("categoryViewCell", forIndexPath: indexPath) as! categoryViewCell
+            
+        cell.categoryLabel?.text = category[indexPath.row]
+            
+        return cell
+        }
     }
+    
+//    func collectionView(categoryCollection: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return category.count
+//        
+//    }
+//    
+//    func collectionView(categoryCollection: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        
+//        let cell = categoryCollection.dequeueReusableCellWithReuseIdentifier("categoryViewCell", forIndexPath: indexPath) as! categoryViewCell
+//        
+//        cell.categoryLabel?.text = category[indexPath.row]
+//        
+//        return cell
+//    }
+    
+    
+    
 }
 
