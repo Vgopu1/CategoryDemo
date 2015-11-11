@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" directionalLockEnabled="YES" dataMode="prototypes" id="ewv-4X-Hzx">
-                                <rect key="frame" x="0.0" y="72" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CWa-N9-mfM">
@@ -23,19 +23,24 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="departmentViewCell" id="bXD-fv-Ax9" customClass="departmentViewCell" customModule="Category">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" reuseIdentifier="departmentViewCell" id="bXD-fv-Ax9" customClass="departmentViewCell" customModule="Category">
                                         <rect key="frame" x="0.0" y="4" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="4wz-Uq-yxe">
+                                                    <rect key="frame" x="0.0" y="-7" width="320" height="132"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zp7-hg-eVf">
-                                                    <rect key="frame" x="0.0" y="55" width="320" height="31"/>
+                                                    <rect key="frame" x="0.0" y="81" width="320" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -44,35 +49,46 @@
                                         </view>
                                         <animations/>
                                         <connections>
+                                            <outlet property="departmentImage" destination="4wz-Uq-yxe" id="rBM-zJ-cgg"/>
                                             <outlet property="departmentLabel" destination="zp7-hg-eVf" id="XtI-lW-MfM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="catnav-1" id="sgR-GI-plx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ROn-S8-ECb">
-                                <rect key="frame" x="0.0" y="217" width="320" height="351"/>
+                                <rect key="frame" x="0.0" y="188" width="320" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aww-dQ-sIv">
-                                    <size key="itemSize" width="102" height="108"/>
+                                    <size key="itemSize" width="92" height="119"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryViewCell" id="A50-d0-zqE" customClass="categoryViewCell" customModule="Category" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="108"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="categoryViewCell" id="A50-d0-zqE" customClass="categoryViewCell" customModule="Category" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="119"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="102" height="108"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="la7-Dw-b13">
-                                                    <rect key="frame" x="0.0" y="78" width="97" height="30"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RjX-MW-H2r">
+                                                    <rect key="frame" x="1" y="0.0" width="91" height="91"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="la7-Dw-b13">
+                                                    <rect key="frame" x="2" y="84" width="91" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="highlightedColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 </label>
                                             </subviews>
@@ -81,6 +97,7 @@
                                         </view>
                                         <animations/>
                                         <connections>
+                                            <outlet property="categoryImage" destination="RjX-MW-H2r" id="9UO-Fu-t4B"/>
                                             <outlet property="categoryLabel" destination="la7-Dw-b13" id="idE-p9-6ne"/>
                                         </connections>
                                     </collectionViewCell>
@@ -100,4 +117,7 @@
             <point key="canvasLocation" x="645" y="570"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="catnav-1" width="320" height="64"/>
+    </resources>
 </document>

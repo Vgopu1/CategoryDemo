@@ -12,5 +12,6 @@ class departmentViewCell: UICollectionViewCell {
     
     @IBOutlet weak var departmentLabel: UILabel!
     
+    @IBOutlet weak var departmentImage: UIImageView!
     
 }

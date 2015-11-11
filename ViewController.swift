@@ -21,8 +21,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let department = ["Fresh Produce", "Fruits", "Favourites", "Bakery"]
     
+    var departmentimages = UIImage(named: "dept1")
+    
     var categories:[String]!
-    var category = ["Cakes","Vegetables"," Kale","Beets","Soups", "Cakes","Vegetables"," Kale","Beets","Soups"]
+    var category = ["Beets","Vegetables"," Kale","Beets","Soups", "Cakes","Vegetables"," Kale","Beets","Soups"]
+    
+    var categoryimages = UIImage(named: "catgrid")
+    
+
     
     
     override func viewDidLoad() {
@@ -39,9 +45,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         categories = category
         
         
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a ni
+        
+        
+        //        let url = NSURL(string: "http://api.walmartlabs.com/v1/search?query=cereal&format=json&categoryId=976759&apiKey=n628bkshh6zrqasgj53eyzsd")!
+        //
+        //        let request = NSURLRequest(URL: url)
+        //
+        //
+        //        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+        //
+        //            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
+        //
+        //            self.products = json["items"] as! [NSdictionary]
+        //
+        //            print(json)
+        
+        //        
+        //        }
     }
 
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,6 +91,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
        
         cell.departmentLabel?.text = department[indexPath.row]
         
+        cell.departmentImage.image = departmentimages
+            
+        
+        
         return cell
         }
         else
@@ -74,24 +102,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = categoryCollection.dequeueReusableCellWithReuseIdentifier("categoryViewCell", forIndexPath: indexPath) as! categoryViewCell
             
         cell.categoryLabel?.text = category[indexPath.row]
+        
+        cell.categoryImage.image = categoryimages
             
         return cell
         }
     }
-    
-//    func collectionView(categoryCollection: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return category.count
-//        
-//    }
-//    
-//    func collectionView(categoryCollection: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        
-//        let cell = categoryCollection.dequeueReusableCellWithReuseIdentifier("categoryViewCell", forIndexPath: indexPath) as! categoryViewCell
-//        
-//        cell.categoryLabel?.text = category[indexPath.row]
-//        
-//        return cell
-//    }
     
     
     
