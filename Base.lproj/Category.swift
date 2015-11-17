@@ -57,7 +57,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //
         //            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
         //
-        //            self.department= json["description"] as! [NSdictionary]
+        //            self.departments= json["items"] as! [NSdictionary]
         //
         //            print(json)
 
